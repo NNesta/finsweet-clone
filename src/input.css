@@ -3,93 +3,621 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
-html, body, label {
+html,
+body,
+label {
     font-family: 'Roboto', sans-serif;
-  }
+}
 
-.title{
-    @apply font-bold text-6xl px-80 text-center
+body {}
+
+.hero__title,
+.quality__title,
+.features__title,
+.testimonials__title,
+.product-marketing__title,
+.business__title,
+.product-features__title {
+    @apply font-bold text-5xl max-w-[59%] mx-auto text-center
 }
-.btn{
-    @apply text-white bg-black px-4 py-2 inline-flex whitespace-nowrap rounded-md
+
+.hero__btn,
+.nav__btn,
+.impressions__btn,
+.business__btn,
+.footer__btn,
+.product-hero__btn {
+    @apply text-white bg-black px-4 py-2 inline-flex whitespace-nowrap rounded-md justify-center hover:bg-gray-700
 }
-.tag{
-    @apply text-teal-500 text-base
+
+.btn--highlighted,
+.footer__btn--highlighted,
+.product-hero__btn--highlighted {
+    @apply text-black bg-white hover:bg-black hover:text-white
 }
-.card{
-    @apply flex flex-col gap-8 max-w-[50%] items-start
+
+.btn--outlined,
+.product-hero__btn--outlined {
+    @apply border-[1px] border-gray-400
 }
-.icon{
+
+.quality__card,
+.work-section__card,
+.impressions__card,
+.discover-section__card,
+.features-card,
+.product-hero__card,
+.product-marketing__card,
+.product-features__card {
+    @apply flex flex-col gap-8 max-w-[95%] items-start
+}
+
+.work__card {
+    @apply flex items-center gap-6
+}
+
+.card--big,
+.discover-section__card--big {
+    @apply w-full
+}
+
+.card__icon,
+.quality__icon,
+.discover__icon {
     @apply h-8 w-8
 }
-.nav{
+
+.discover__detail {
+    @apply gap-4
+}
+
+.card__body,
+.work-section__body,
+.quality-card__body,
+.discover__body,
+.product-marketing__body,
+.features-card__body {
+    @apply text-base
+}
+
+.discover__item {
+    @apply flex gap-4
+}
+
+.discover__title {
+    @apply text-xl font-semibold
+}
+
+.discover__icon,
+.features-card__icon {
+    @apply h-12 w-12
+}
+
+.card__tag,
+.quality-card__tag,
+.work-section__tag,
+.quality__tag,
+.discover-section__tag,
+.product-marketing__tag {
+    font-weight: 700;
+    font-size: 24px;
+
+    background: linear-gradient(53.94deg, #373FFF 15.02%, #3ACAF8 82.83%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.discover-section__title {
+    @apply text-4xl font-semibold tracking-wide
+}
+
+.icon--rounded {
+    @apply h-12 w-12 rounded-full flex justify-center items-center bg-[#FFACAC]
+}
+
+.quality-card__title,
+.work-section__title,
+.features-card__title,
+.card__title {
+    @apply text-2xl font-semibold max-w-[80%]
+}
+
+.card__title--big,
+.work-section__title--big {
+    @apply text-4xl font-semibold
+}
+
+.nav {
     @apply flex justify-between items-center px-8 py-2 w-full
 }
-.nav__logo{
+
+.nav__logo {
     @apply h-6 object-cover
 }
-.menu{
+
+.nav__menu {
     @apply flex gap-4 items-center
 }
 
-.home{
-    @apply flex flex-col items-center text-black relative gap-8
+body {
+    @apply flex flex-col items-center container mx-auto text-black relative gap-8
 }
-.welcome{
+
+.hero {
     background: url('/image/g.png')
 }
 
-.welcome__description{
-    @apply text-center px-80 my-8
+.hero__description {
+    @apply text-center max-w-[60%] mx-auto my-8
 }
-.welcome__image{
-    @apply mx-auto
+
+.hero__image {
+    @apply mx-auto max-w-[70%]
 }
-.trial{
+
+.hero__background {
+    @apply absolute top-1/4 left-1/4 w-96 h-96;
+    background: radial-gradient(483.9% 2719.65% at -49.5% -250%,
+            #d798e1 17.55%,
+            #9bffa5 27.56%,
+            #aed3ff 49.89%,
+            #c9d4ef 56.53%,
+            #cacffa 65.69%);
+    filter: blur(200px);
+}
+
+.hero__trial {
     @apply max-w-xl mx-auto flex bg-white items-center py-4 justify-center my-8 rounded-md
 }
-.trial__input{
-    @apply  focus:outline-none flex-1 px-5 
-}
-.welcome__gradient{
-    @apply absolute top-1/4 left-1/4 w-96 h-96
+
+.hero__input {
+    @apply focus:outline-none flex-1 px-5
 }
 
-.quality{
+
+
+.quality {
     @apply flex flex-col items-center gap-8 w-full p-16
 }
-.quality-desc{
-    @apply bg-[#E0E4FC] p-12 justify-center flex gap-6 w-full items-center max-w-[90%] rounded-md
-}
-.quality-card__title{
-    @apply text-2xl font-semibold
-}
-.why-work{
-   @apply max-w-[90%] flex gap-12 items-center p-16 w-full
-}
-.why-work__desc{
-    @apply text-4xl font-semibold max-w-[80%]
-}
-.why-work__paragraph{
-    @apply text-xl max-w-[99%]
-}
-.why-work__card{
-    @apply flex items-center gap-8
+
+.flex-section,
+.quality-section,
+.work-section,
+.discover-section,
+.features-section {
+    @apply p-12 justify-center flex gap-6 w-full items-center max-w-[98%] rounded-md mx-auto
 }
 
-.icon--rounded{
-    @apply h-12 w-12 rounded-full flex justify-center items-center bg-[#FFACAC]
+
+.quality-section--light {
+    @apply bg-[#E0E4FC]
 }
-.impressions{
+
+.flex-section--features {
+    @apply bg-[#D798E126]
+}
+
+.work,
+.discover {
+    @apply flex flex-col gap-8 items-center w-full
+}
+
+
+
+
+
+
+.impressions {
     @apply flex w-full gap-12 items-center justify-between p-16 bg-gradient-to-r from-teal-100 to-purple-100
 }
 
-.impressions__title{
-    @apply text-4xl max-w-[80%] font-semibold
+.impressions__title {
+    @apply text-4xl max-w-[90%] font-semibold
 }
-.impressions__desc{
-    @apply max-w-[75%]
+
+.impressions__body {
+    @apply max-w-full
 }
-.logoipsum-sect{
-    @apply flex gap-16 p-8 mx-auto
+
+.company {
+    @apply flex gap-16 p-16 w-full justify-between
+}
+
+.company__image {
+    @apply h-8
+}
+
+.features {
+    @apply flex flex-col p-12 justify-center gap-6 w-full items-center max-w-[98%] mx-auto
+}
+
+.features__cards {
+    @apply flex w-full max-w-[90%]
+}
+
+.testimonials-items {
+    @apply grid grid-cols-3 gap-8 max-w-[80%] w-full mx-auto my-8
+}
+
+.testimonial-card {
+    @apply flex flex-col items-center gap-4 p-12 border-[1px] border-gray-400 rounded-lg
+}
+
+.testimonial-card__name {
+    @apply text-xl font-semibold
+}
+
+.testimonial-card__body {
+    @apply font-medium
+}
+
+.testimonial-card__position {
+    @apply text-xl
+}
+
+.business {
+    @apply flex flex-col items-center gap-8 m-16
+}
+
+.footer-background {
+    @apply absolute bottom-32 left-0 -z-10;
+    position: absolute;
+    transform: rotate(180deg);
+    height: 254px;
+    right: 168px;
+    bottom: 300px;
+
+    background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+    filter: blur(200px);
+}
+
+.footer {
+    @apply bg-[#1D2130] flex flex-col justify-between items-center p-8 w-full h-[383px] text-white text-opacity-50
+}
+
+.footer__upper {
+    @apply flex justify-between p-8 w-full
+}
+
+.footer__header {
+    @apply text-xl font-semibold text-white
+}
+
+.footer-card {
+    @apply flex flex-col gap-4
+}
+
+.footer__item--light {}
+
+.footer__subscribe {
+    @apply flex bg-transparent
+}
+
+.footer__input {
+    @apply bg-gray-100 bg-opacity-10 px-4
+}
+
+.footer__lower {
+    @apply flex gap-4 mx-auto
+}
+
+.footer__social-icon {
+    @apply text-opacity-50 text-red-600
+}
+
+.footer__logo {
+    @apply h-[31.35px] w-[138.75px] object-cover
+}
+
+.footer__line {
+    @apply w-[550px]
+}
+
+.product-background {
+    @apply -z-10 w-full;
+    position: absolute;
+    height: 1917.12px;
+    left: 0px;
+    top: 271.16px;
+
+    /* Blur gradient */
+
+    background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+    filter: blur(350px);
+}
+
+/* Product page */
+.product-hero {
+    @apply bg-white w-full
+}
+
+.product-hero__section {
+    @apply flex max-w-[90%] mx-auto items-center
+}
+
+.product-hero__title {
+    @apply text-4xl font-semibold max-w-md
+}
+
+.product-hero__body {
+    @apply max-w-lg
+}
+
+.product-hero__image {
+    @apply max-w-[50%] z-10
+}
+
+.product-hero__buttons {
+    @apply flex gap-8
+}
+
+.product-hero__background {
+    position: absolute;
+    width: 555px;
+    height: 555px;
+    right: 78px;
+    top: 168px;
+
+    background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+    filter: blur(300px);
+}
+
+.product-features {
+    @apply grid grid-cols-3 gap-y-4 w-full bg-white max-w-[90%] -ml-40 p-8 rounded-tr-[67px] opacity-[0.69]
+}
+
+.product-features__title {
+    @apply text-2xl font-semibold
+}
+
+.product-marketing {
+    @apply grid grid-cols-2 gap-4 bg-white items-center -mt-8 justify-items-center p-12
+}
+
+.product-marketing__image {
+    @apply h-96 object-cover
+}
+
+.pricing-cards {
+    @apply flex gap-8 mx-auto
+}
+
+.pricing-card {
+    @apply bg-white py-4 px-8 flex flex-col items-center justify-center
+}
+
+.pricing-card--highlited {
+    background: linear-gradient(175.67deg, #D7E7F9 13.12%, #D5F4EC 96.48%);
+}
+
+.pricing-card__item {
+    @apply flex gap-2 items-center
+}
+
+.pricing-card__items {
+    @apply flex flex-col gap-4 items-start py-4 px-8
+}
+
+.pricing-card__header {
+    @apply flex items-center gap-4 border-b-[1px] border-gray-400 p-8 pr-32
+}
+
+.pricing-card__bottom {
+    @apply flex flex-col items-center gap-4
+}
+
+.faq {
+    @apply flex bg-[#F0F2FE] p-8 justify-between m-16 gap-8
+}
+
+.faq__detail {
+    @apply max-w-[40%] flex flex-col gap-4
+}
+
+.faq__title {
+    @apply text-3xl font-semibold z-50 max-w-[70%] text-black
+}
+
+.faq-card {
+    @apply bg-white p-4
+}
+
+.faq-cards {
+    @apply flex flex-col gap-4 max-w-[60%]
+}
+
+.faq-card__header {
+    @apply flex justify-between bg-white p-4
+}
+
+.faq-card__title {
+    @apply text-xl font-semibold
+}
+
+.contact {
+    @apply bg-[#F0F2FE] p-8 w-full max-w-[90%]
+}
+
+.contact-sect {
+    @apply flex justify-between items-center
+}
+
+.btn--send {
+    @apply col-span-2
+}
+
+.message {
+    @apply flex flex-col gap-4 min-w-[50%]
+}
+
+.message__title {
+    @apply text-2xl font-semibold
+}
+
+.message__desc {
+    @apply text-xl
+}
+
+.contact-form {
+    @apply grid grid-cols-2 gap-6
+}
+
+.contact-form__input {
+    @apply h-8 px-4
+}
+
+.contact-form__input--big {
+    @apply col-span-2
+}
+
+.contact-form__input--bigger {
+    @apply col-span-2 h-32
+}
+
+.contact-address__item {
+    @apply flex gap-4 items-center px-8 my-8
+}
+
+.contact-address__icon {
+    @apply h-[32px]
+}
+
+.contact-address__detail {
+    @apply flex flex-col gap-2
+}
+
+.contact-address__title {
+    @apply text-xl font-semibold
+}
+
+.about {
+    @apply flex flex-col gap-4 items-center my-8
+}
+
+.about__title {
+    @apply text-4xl font-semibold text-center
+}
+
+.about__desc {
+    @apply text-center max-w-[70%] mx-auto
+}
+
+.about__images {
+    @apply flex gap-4 items-center mb-16
+}
+
+.about__image {
+    @apply h-48
+}
+
+.vision-goals {
+    @apply flex gap-8 bg-[#F0F2FE] p-16
+}
+
+.about-card__title {
+    @apply text-4xl font-semibold max-w-[85%]
+}
+
+.about-card__desc {
+    @apply max-w-[100%]
+}
+
+.values {
+    @apply flex flex-col items-center gap-4
+}
+
+.values__title {
+    @apply text-4xl font-semibold
+}
+
+.values__list {
+    @apply grid grid-cols-3 bg-[#F9F0FB] p-8 gap-8
+}
+
+.value {
+    @apply flex flex-col gap-2 items-start
+}
+
+.value__icon {
+    @apply h-8 bg-cover
+}
+
+.value__title {
+    @apply text-xl font-semibold
+}
+
+.talent-team {
+    @apply flex gap-4 m-8
+}
+
+.talent-team__detail {
+    @apply flex flex-col gap-4 max-w-[30%]
+}
+
+.talent-team__title {
+    @apply text-2xl font-semibold
+}
+
+.talent-team__profiles {
+    @apply grid grid-cols-3 gap-4
+}
+
+.team-profile {
+    @apply flex flex-col gap-4 items-center bg-[#E0E4FC] rounded-t-full
+}
+
+.team-profile__name {
+    @apply text-xl font-semibold
+}
+
+.blog {
+    @apply p-4 flex flex-col gap-4
+}
+
+.blog__description {
+    @apply max-w-[60%] mx-auto text-center
+}
+
+.trending {
+    @apply flex gap-4 p-8 border-[1px] border-gray-300 shadow-sm m-8
+}
+
+.trending__detail {
+    @apply flex flex-col gap-4 max-w-[70%]
+}
+
+.trending__title {
+    @apply text-4xl font-semibold
+}
+
+.posts {
+    @apply grid grid-cols-3 gap-6 p-16
+}
+
+.post {
+    @apply flex flex-col gap-4
+}
+
+.post__title {
+    @apply text-xl font-semibold
+}
+
+.single-blog {
+    @apply mx-16 p-8 flex flex-col gap-4
+}
+
+.single-blog__desc {
+    @apply max-w-[70%] mx-auto
+}
+
+.single-blog__title {
+    @apply text-4xl font-bold mx-auto
 }
