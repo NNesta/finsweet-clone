@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+html, body, label {
+    font-family: 'Roboto', sans-serif;
+  }
+
+.title{
+    @apply font-bold text-6xl px-80 text-center
+}
+.btn{
+    @apply text-white bg-black px-4 py-2 inline-flex whitespace-nowrap rounded-md
+}
+.tag{
+    @apply text-teal-500 text-base
+}
+.card{
+    @apply flex flex-col gap-8 max-w-[50%] items-start
+}
+.icon{
+    @apply h-8 w-8
+}
+.nav{
+    @apply flex justify-between items-center px-8 py-2 w-full
+}
+.nav__logo{
+    @apply h-6 object-cover
+}
+.menu{
+    @apply flex gap-4 items-center
+}
+
+.home{
+    @apply flex flex-col items-center text-black relative gap-8
+}
+.welcome{
+    background: url('/image/g.png')
+}
+
+.welcome__description{
+    @apply text-center px-80 my-8
+}
+.welcome__image{
+    @apply mx-auto
+}
+.trial{
+    @apply max-w-xl mx-auto flex bg-white items-center py-4 justify-center my-8 rounded-md
+}
+.trial__input{
+    @apply  focus:outline-none flex-1 px-5 
+}
+.welcome__gradient{
+    @apply absolute top-1/4 left-1/4 w-96 h-96
+}
+
+.quality{
+    @apply flex flex-col items-center gap-8 w-full p-16
+}
+.quality-desc{
+    @apply bg-[#E0E4FC] p-12 justify-center flex gap-6 w-full items-center max-w-[90%] rounded-md
+}
+.quality-card__title{
+    @apply text-2xl font-semibold
+}
+.why-work{
+   @apply max-w-[90%] flex gap-12 items-center p-16 w-full
+}
+.why-work__desc{
+    @apply text-4xl font-semibold max-w-[80%]
+}
+.why-work__paragraph{
+    @apply text-xl max-w-[99%]
+}
+.why-work__card{
+    @apply flex items-center gap-8
+}
+
+.icon--rounded{
+    @apply h-12 w-12 rounded-full flex justify-center items-center bg-[#FFACAC]
+}
+.impressions{
+    @apply flex w-full gap-12 items-center justify-between p-16 bg-gradient-to-r from-teal-100 to-purple-100
+}
+
+.impressions__title{
+    @apply text-4xl max-w-[80%] font-semibold
+}
+.impressions__desc{
+    @apply max-w-[75%]
+}
+.logoipsum-sect{
+    @apply flex gap-16 p-8 mx-auto
+}
