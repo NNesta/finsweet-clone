@@ -583,11 +583,8 @@ body {
 
 .hero__title, 
 .quality__title, 
-.features__title, 
 .testimonials__title, 
-.product-marketing__title, 
-.business__title, 
-.product-features__title {
+.business__title {
   margin-left: auto;
   margin-right: auto;
   max-width: 59%;
@@ -595,6 +592,19 @@ body {
   font-size: 3rem;
   line-height: 1;
   font-weight: 700;
+}
+
+..product-features__title {
+  max-width: 80%;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.product-marketing__title {
+  max-width: 80%;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
 }
 
 .hero__btn, 
@@ -656,7 +666,7 @@ body {
 .work-section__card, 
 .impressions__card, 
 .discover-section__card, 
-.features-card, 
+.features__card, 
 .product-hero__card, 
 .product-marketing__card, 
 .product-features__card {
@@ -694,7 +704,7 @@ body {
 .quality-card__body, 
 .discover__body, 
 .product-marketing__body, 
-.features-card__body {
+.features__body {
   font-size: 1rem;
   line-height: 1.5rem;
 }
@@ -711,24 +721,23 @@ body {
 }
 
 .discover__icon, 
-.features-card__icon {
+.features__icon {
   height: 3rem;
   width: 3rem;
 }
 
-.card__tag,
-.quality-card__tag,
-.work-section__tag,
-.quality__tag,
-.discover-section__tag,
+.card__tag, 
+.quality-card__tag, 
+.work-section__tag, 
+.quality__tag, 
+.discover-section__tag, 
 .product-marketing__tag {
-  font-weight: 700;
-  font-size: 24px;
-  background: linear-gradient(53.94deg, #373FFF 15.02%, #3ACAF8 82.83%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  z-index: -50;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #373FFF;
+  --tw-gradient-to: rgb(55 63 255 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #3ACAF8;
 }
 
 .discover-section__title {
@@ -751,7 +760,7 @@ body {
 
 .quality-card__title, 
 .work-section__title, 
-.features-card__title, 
+.features__title, 
 .card__title {
   max-width: 80%;
   font-size: 1.5rem;
@@ -858,15 +867,18 @@ body {
   position: absolute;
   top: 25%;
   left: 25%;
+  z-index: -1000;
   height: 24rem;
   width: 24rem;
-  background: radial-gradient(483.9% 2719.65% at -49.5% -250%,
-            #d798e1 17.55%,
-            #9bffa5 27.56%,
-            #aed3ff 49.89%,
-            #c9d4ef 56.53%,
-            #cacffa 65.69%);
-  filter: blur(200px);
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #c9d4ef;
+  --tw-gradient-to: rgb(201 212 239 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(215 152 225 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #d798e1, var(--tw-gradient-to);
+  --tw-gradient-to: #9bffa5;
+  --tw-blur: blur(200px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .hero__trial {
@@ -909,7 +921,7 @@ body {
 .quality-section, 
 .work-section, 
 .discover-section, 
-.features-section {
+.features__items {
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -927,7 +939,7 @@ body {
   background-color: rgb(224 228 252 / var(--tw-bg-opacity));
 }
 
-.flex-section--features {
+.features__items--dark {
   background-color: #D798E126;
 }
 
@@ -941,6 +953,7 @@ body {
 }
 
 .impressions {
+  z-index: -50;
   display: flex;
   width: 100%;
   align-items: center;
@@ -990,13 +1003,11 @@ body {
   padding: 3rem;
 }
 
-.features__cards {
-  display: flex;
-  width: 100%;
-  max-width: 90%;
-}
+/* .features__cards {
+    @apply flex w-full max-w-[90%]
+} */
 
-.testimonials-items {
+.testimonials__items {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
@@ -1008,7 +1019,7 @@ body {
   gap: 2rem;
 }
 
-.testimonial-card {
+.testimonials__card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1020,17 +1031,17 @@ body {
   padding: 3rem;
 }
 
-.testimonial-card__name {
+.testimonials__name {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
 }
 
-.testimonial-card__body {
+.testimonials__body {
   font-weight: 500;
 }
 
-.testimonial-card__position {
+.testimonials__position {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -1044,18 +1055,19 @@ body {
 }
 
 .footer-background {
+  position: absolute;
   bottom: 8rem;
   left: 0px;
-  z-index: -10;
-  position: absolute;
-  transform: rotate(180deg);
-  height: 254px;
-  right: 168px;
-  bottom: 300px;
-  background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
-  filter: blur(200px);
+  z-index: -50;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #D798E1;
+  --tw-gradient-to: rgb(215 152 225 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(155 255 165 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #9BFFA5, var(--tw-gradient-to);
+  --tw-gradient-to: #AED3FF;
+  --tw-blur: blur(200px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .footer {
@@ -1132,17 +1144,17 @@ body {
 }
 
 .product-background {
-  z-index: -10;
+  z-index: -50;
   width: 100%;
-  position: absolute;
-  height: 1917.12px;
-  left: 0px;
-  top: 271.16px;
-  /* Blur gradient */
-  background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
-  filter: blur(350px);
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #D798E1;
+  --tw-gradient-to: rgb(215 152 225 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(155 255 165 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #9BFFA5, var(--tw-gradient-to);
+  --tw-gradient-to: #AED3FF;
+  --tw-blur: blur(350px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 /* Product page */
@@ -1184,18 +1196,23 @@ body {
 
 .product-hero__background {
   position: absolute;
-  width: 555px;
-  height: 555px;
   right: 78px;
   top: 168px;
-  background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
-  filter: blur(300px);
+  z-index: -50;
+  height: 555px;
+  width: 555px;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #D798E1;
+  --tw-gradient-to: rgb(215 152 225 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(155 255 165 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #9BFFA5, var(--tw-gradient-to);
+  --tw-gradient-to: #AED3FF;
+  --tw-blur: blur(300px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.product-features {
-  margin-left: -10rem;
+.product-features__items {
   display: grid;
   width: 100%;
   max-width: 90%;
@@ -1209,9 +1226,20 @@ body {
 }
 
 .product-features__title {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  max-width: 80%;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   font-weight: 600;
+}
+
+.product-features__title--big {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .product-marketing {
@@ -1253,7 +1281,11 @@ body {
 }
 
 .pricing-card--highlited {
-  background: linear-gradient(175.67deg, #D7E7F9 13.12%, #D5F4EC 96.48%);
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #D7E7F9;
+  --tw-gradient-to: rgb(215 231 249 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #D5F4EC;
 }
 
 .pricing-card__item {

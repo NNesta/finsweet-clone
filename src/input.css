@@ -8,17 +8,24 @@ body,
 label {
     font-family: 'Roboto', sans-serif;
 }
-
+.bg{
+    
+}
 body {}
 
 .hero__title,
 .quality__title,
-.features__title,
 .testimonials__title,
-.product-marketing__title,
-.business__title,
-.product-features__title {
+.business__title {
     @apply font-bold text-5xl max-w-[59%] mx-auto text-center
+}
+
+..product-features__title {
+    @apply text-4xl max-w-[80%]
+}
+
+.product-marketing__title {
+    @apply font-semibold text-3xl max-w-[80%]
 }
 
 .hero__btn,
@@ -45,7 +52,7 @@ body {}
 .work-section__card,
 .impressions__card,
 .discover-section__card,
-.features-card,
+.features__card,
 .product-hero__card,
 .product-marketing__card,
 .product-features__card {
@@ -76,7 +83,7 @@ body {}
 .quality-card__body,
 .discover__body,
 .product-marketing__body,
-.features-card__body {
+.features__body {
     @apply text-base
 }
 
@@ -89,7 +96,7 @@ body {}
 }
 
 .discover__icon,
-.features-card__icon {
+.features__icon {
     @apply h-12 w-12
 }
 
@@ -99,14 +106,9 @@ body {}
 .quality__tag,
 .discover-section__tag,
 .product-marketing__tag {
-    font-weight: 700;
-    font-size: 24px;
+    @apply bg-gradient-to-r from-[#373FFF] to-[#3ACAF8] -z-50;
 
-    background: linear-gradient(53.94deg, #373FFF 15.02%, #3ACAF8 82.83%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+    
 }
 
 .discover-section__title {
@@ -119,7 +121,7 @@ body {}
 
 .quality-card__title,
 .work-section__title,
-.features-card__title,
+.features__title,
 .card__title {
     @apply text-2xl font-semibold max-w-[80%]
 }
@@ -158,14 +160,8 @@ body {
 }
 
 .hero__background {
-    @apply absolute top-1/4 left-1/4 w-96 h-96;
-    background: radial-gradient(483.9% 2719.65% at -49.5% -250%,
-            #d798e1 17.55%,
-            #9bffa5 27.56%,
-            #aed3ff 49.89%,
-            #c9d4ef 56.53%,
-            #cacffa 65.69%);
-    filter: blur(200px);
+    @apply -z-[1000] absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#c9d4ef] via-[#d798e1] to-[#9bffa5] filter blur-[200px];
+  
 }
 
 .hero__trial {
@@ -186,7 +182,7 @@ body {
 .quality-section,
 .work-section,
 .discover-section,
-.features-section {
+.features__items {
     @apply p-12 justify-center flex gap-6 w-full items-center max-w-[98%] rounded-md mx-auto
 }
 
@@ -195,7 +191,7 @@ body {
     @apply bg-[#E0E4FC]
 }
 
-.flex-section--features {
+.features__items--dark {
     @apply bg-[#D798E126]
 }
 
@@ -210,7 +206,7 @@ body {
 
 
 .impressions {
-    @apply flex w-full gap-12 items-center justify-between p-16 bg-gradient-to-r from-teal-100 to-purple-100
+    @apply flex w-full gap-12 items-center justify-between p-16 bg-gradient-to-r from-teal-100 to-purple-100 -z-50
 }
 
 .impressions__title {
@@ -233,27 +229,27 @@ body {
     @apply flex flex-col p-12 justify-center gap-6 w-full items-center max-w-[98%] mx-auto
 }
 
-.features__cards {
+/* .features__cards {
     @apply flex w-full max-w-[90%]
-}
+} */
 
-.testimonials-items {
+.testimonials__items {
     @apply grid grid-cols-3 gap-8 max-w-[80%] w-full mx-auto my-8
 }
 
-.testimonial-card {
+.testimonials__card {
     @apply flex flex-col items-center gap-4 p-12 border-[1px] border-gray-400 rounded-lg
 }
 
-.testimonial-card__name {
+.testimonials__name {
     @apply text-xl font-semibold
 }
 
-.testimonial-card__body {
+.testimonials__body {
     @apply font-medium
 }
 
-.testimonial-card__position {
+.testimonials__position {
     @apply text-xl
 }
 
@@ -262,17 +258,7 @@ body {
 }
 
 .footer-background {
-    @apply absolute bottom-32 left-0 -z-10;
-    position: absolute;
-    transform: rotate(180deg);
-    height: 254px;
-    right: 168px;
-    bottom: 300px;
-
-    background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
-    filter: blur(200px);
+    @apply absolute bottom-32 left-0  bg-gradient-to-r from-[#D798E1] via-[#9BFFA5] to-[#AED3FF] filter blur-[200px] -z-50;
 }
 
 .footer {
@@ -318,18 +304,7 @@ body {
 }
 
 .product-background {
-    @apply -z-10 w-full;
-    position: absolute;
-    height: 1917.12px;
-    left: 0px;
-    top: 271.16px;
-
-    /* Blur gradient */
-
-    background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
-    filter: blur(350px);
+    @apply -z-50 w-full bg-gradient-to-r from-[#D798E1] via-[#9BFFA5] to-[#AED3FF] filter blur-[350px]
 }
 
 /* Product page */
@@ -358,24 +333,19 @@ body {
 }
 
 .product-hero__background {
-    position: absolute;
-    width: 555px;
-    height: 555px;
-    right: 78px;
-    top: 168px;
-
-    background: radial-gradient(483.9% 2719.65% at -49.5% -250%, #D798E1 17.55%, #9BFFA5 27.56%, #AED3FF 49.89%, #C9D4EF 56.53%, #CACFFA 65.69%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
-    filter: blur(300px);
+    @apply absolute w-[555px] h-[555px] right-[78px] top-[168px] bg-gradient-to-r from-[#D798E1] via-[#9BFFA5] to-[#AED3FF] filter blur-[300px] -z-50
 }
 
-.product-features {
-    @apply grid grid-cols-3 gap-y-4 w-full bg-white max-w-[90%] -ml-40 p-8 rounded-tr-[67px] opacity-[0.69]
+.product-features__items {
+    @apply grid grid-cols-3 gap-y-4 w-full bg-white max-w-[90%] p-8 rounded-tr-[67px] opacity-[0.69]
 }
 
 .product-features__title {
-    @apply text-2xl font-semibold
+    @apply text-3xl font-semibold max-w-[80%]
+}
+
+.product-features__title--big {
+    @apply text-6xl mx-auto my-4 text-center
 }
 
 .product-marketing {
@@ -395,7 +365,7 @@ body {
 }
 
 .pricing-card--highlited {
-    background: linear-gradient(175.67deg, #D7E7F9 13.12%, #D5F4EC 96.48%);
+    @apply bg-gradient-to-r from-[#D7E7F9] to-[#D5F4EC];
 }
 
 .pricing-card__item {
